@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+#  batch: true
+#  branches:
+#    include:
+#    - master
+
+pool:
+  vmImage: 'macos-latest'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo "print xcode version"
+    echo $(/usr/bin/xcodebuild -version)
+  displayName: 'Print Xcode Version'
+
+- task: Xcode@5
+  inputs:
+#    xcWorkspacePath: 'project.xcworkspace'
+    xcodeVersion: 'specifyPath'
+    xcodeDeveloperDir: '/Applications/Xcode_12.app'
