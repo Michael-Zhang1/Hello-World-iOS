@@ -23,6 +23,7 @@ steps:
 
 - task: Xcode@5
   inputs:
+    sdk: 'iphoneos'
 #    xcWorkspacePath: 'project.xcworkspace'
     xcodeVersion: 'specifyPath'
     xcodeDeveloperDir: '/Applications/Xcode_12.app'
