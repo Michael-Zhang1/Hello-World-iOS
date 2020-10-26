@@ -11,7 +11,7 @@ trigger: none
 
 variables:
 - name: xcode_path
-  value: /Applications/Xcode_12.app
+  value: '/Applications/Xcode_12.app'
 
 pool:
   vmImage: 'macos-latest'
