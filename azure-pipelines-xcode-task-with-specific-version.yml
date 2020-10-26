@@ -9,6 +9,10 @@ trigger: none
 #    include:
 #    - master
 
+variables:
+- name: xcode_path
+  value: /Applications/Xcode_12.app
+
 pool:
   vmImage: 'macos-latest'
 
@@ -18,7 +22,7 @@ steps:
 
 - script: |
     echo "set xcode version"
-    /bin/bash -c "sudo xcode-select -s /Applications/Xcode_12.app/Contents/Developer"
+    /bin/bash -c "sudo xcode-select -s $(xcode_path)/Contents/Developer"
   displayName: 'Set Xcode Version'
 
 - script: |
